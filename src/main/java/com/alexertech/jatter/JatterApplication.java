@@ -1,17 +1,13 @@
 package com.alexertech.jatter;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Controller
-@RequestMapping
+@SpringBootApplication
 public class JatterApplication {
 
-	@GetMapping("/")
-	public String index(Model model) {
-		return "index";
+	public static void main(String[] args) {
+		SpringApplication.run(JatterApplication.class, args);
 	}
 
 }
