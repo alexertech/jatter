@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping
-public class JatterApplication {
+public class PagesController {
 
 	@GetMapping("/")
 	public String index(Model model) {
