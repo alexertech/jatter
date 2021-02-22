@@ -1,4 +1,4 @@
-package com.alexetech.jatter.user;
+package com.alexertech.jatter.user;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class Users {
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "jeets", joinColumns = @JoinColumn(name = "userId"), 
-	inverseJoinColumns = @JoinColumn(name = "userId"))
+	inverseJoinColumns = @JoinColumn(name = "jeetId"))
 	List<Jeet> jeets;
 
 	public int getUserId() {

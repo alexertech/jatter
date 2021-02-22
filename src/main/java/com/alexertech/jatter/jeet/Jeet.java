@@ -18,38 +18,28 @@ import javax.persistence.Table;
 public class Jeet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int userId;	
-	@Column(unique=true)
-	private String username;
-	private String password;
+	private int jeetId;	
+	private String message;
 
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "users", joinColumns = @JoinColumn(name = "userId"), 
+	@JoinTable(name = "users", joinColumns = @JoinColumn(name = "jeetId"), 
 	inverseJoinColumns = @JoinColumn(name = "userId"))
 	List<Jeet> jeets;
 
-	public int getUserId() {
-		return userId;
+	public int getJeetId() {
+		return jeetId;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setJeetId(int jeetId) {
+		this.jeetId = jeetId;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<Jeet> getJeets() {
