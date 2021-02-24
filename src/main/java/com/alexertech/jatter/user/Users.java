@@ -15,10 +15,12 @@ import javax.persistence.Table;
 
 import com.alexertech.jatter.jeet.Jeet;
 
-
 /*
- * Plural name because spring.security has a class called User, and there was a mess overriding both clasess
- */
+ * The Users Class models the Users. This class works very closely with SpringSecurity and uses
+ * a Plural name because the security framework has a class called User  
+ * 
+ * Note that this class also handles the setup up of the database tables.
+ * */
 
 @Entity
 @Table(name = "users")

@@ -10,6 +10,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/*
+ * The WebSecurityConfig Class handles all the security of the application.
+ * Controls the login process and use authorizeRequests() to determine the allowed resources.
+ * */
 
 @Configuration
 @EnableWebSecurity
@@ -20,7 +24,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	UserDetailsService userDetailsService;
-	
 
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -38,6 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.logoutSuccessUrl("/index");
 	}
 
+	// Configure as password the  BCryptPasswordEncoder method in this class.
+	// Note: Passwords should be stored as BCrypt in the database
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);

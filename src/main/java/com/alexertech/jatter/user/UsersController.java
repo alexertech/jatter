@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/*
+ * The UserController Class handles all the request and interactions related to the 
+ * Users. Allows listing, update, delete among other operations over the data.
+ * */
+
 @Controller
 @RequestMapping
 public class UsersController{
@@ -17,6 +22,7 @@ public class UsersController{
 	@Autowired
 	private UsersRepository service;
 	
+	// Set up the Bcrypt encoder to handle the passwords
 	@Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 	
@@ -29,19 +35,33 @@ public class UsersController{
 
 	// --------------------------------------
 	
+	// Adding a record
 	@GetMapping("/user/add")
 	public String add(Model model) {
+		// "model" is our way to send information to the view using thymeleaf.
+		// In this case we are setting a new User object.
 		model.addAttribute("usersForm", new Users());
-		model.addAttribute("formAction", "save");
+		
+		// Return the user_form view
 		return "user_form"; 
 	}
 	
+	// Saving the record
 	@PostMapping("/user/save")
 	public String save(Users i, Model model) {
+		// First we receive the user post information from the form in the object "i"
+		// Extract the password from the submission for encoding
 		String encPass =  bCryptPasswordEncoder.encode(i.getPassword());
+		
+		// And then, save in the same object the password encrypted
 		i.setPassword(encPass);
+		
+		// Using the service class connected to the users repository we can save the 
+		// new user.
 		service.save(i);
-		return "redirect:/user/list";
+		
+		// Return the user_index view
+		return "user_index";
 	}
 	
 }

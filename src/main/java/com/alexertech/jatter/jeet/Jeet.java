@@ -2,7 +2,6 @@ package com.alexertech.jatter.jeet;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,6 +11,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+/*
+ * The Jeet Class models the Jeets, which would be the equivalent to Tweets.
+ * Each message is attached to a user. 
+ * Note that this class also handles the setup up of the database tables.
+ * */
 
 @Entity
 @Table(name = "jeets")
