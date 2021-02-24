@@ -10,7 +10,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * to CRUD or JPA depending of which database is used.
  * */
 
-
 public interface UsersRepository extends MongoRepository<Users, String> {
 
 	// Required for SpringSecurity, we need to find a users with Username

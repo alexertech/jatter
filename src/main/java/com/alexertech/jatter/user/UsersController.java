@@ -36,7 +36,7 @@ public class UsersController{
 	// --------------------------------------
 	
 	// Adding a record
-	@GetMapping("/user/add")
+	@GetMapping("/register")
 	public String add(Model model) {
 		// "model" is our way to send information to the view using thymeleaf.
 		// In this case we are setting a new User object.
@@ -47,7 +47,7 @@ public class UsersController{
 	}
 	
 	// Saving the record
-	@PostMapping("/user/save")
+	@PostMapping("/register/save")
 	public String save(Users i, Model model) {
 		// First we receive the user post information from the form in the object "i"
 		// Extract the password from the submission for encoding

@@ -11,12 +11,11 @@
 		
 			<div th:include="fragments.html :: session_buttons"></div>
 			<div style="clear:both;height:5px;"></div>
-			<a th:href="@{/user/list}" class="btn btn-primary">Back to Users</a>
 			
 			 <br><br>
 			
 			<div class="col-sm-6">
-				<form th:action="@{/user/}+${formAction}" th:object=${usersForm} method="POST">
+				<form th:action="@{/register/save}" th:object=${usersForm} method="POST">
 					<div class="card">
 						<div class="card-header">
 							<h3>Users Module</h3>
