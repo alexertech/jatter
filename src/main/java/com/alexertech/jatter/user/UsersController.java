@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 /*
  * The UserController Class handles all the request and interactions related to the 
  * Users. Allows listing, update, delete among other operations over the data.
@@ -63,6 +64,21 @@ public class UsersController{
 		// Return the user_index view
 		return "user_index";
 	}
+	
+	// Process login action
+	@GetMapping("/login")
+	public String login(Model model) {
+		model.addAttribute("usersForm",new Users());
+		return "login"; 
+	}
+	
+	// Process login error
+	@GetMapping("/login-error")
+	public String login_error(Model model) {
+		model.addAttribute("usersForm",new Users());
+		model.addAttribute("loginError",true);
+		return "login"; 
+	}	
 	
 }
 
