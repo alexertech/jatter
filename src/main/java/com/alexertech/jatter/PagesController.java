@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class PagesController {
 
-
 	@GetMapping("/")
 	public String index(Model model) {
 		return "index";

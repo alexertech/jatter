@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/", "/index", "/css/**", "/js/**", "/register/**").permitAll()
+				.antMatchers("/**").permitAll() // , "/index", "/css/**", "/js/**", "/register/**"
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.logout()
 				.permitAll()
-				.logoutSuccessUrl("/index");
+				.logoutSuccessUrl("/");
 	}
 
 	// Configure as password the  BCryptPasswordEncoder method in this class.
