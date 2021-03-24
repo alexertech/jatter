@@ -1,8 +1,11 @@
-/home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/UsersRepository.java
+/home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/UserController.java
+/home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/UserRepository.java
 /home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/jeet/JeetRepository.java
-/home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/UsersController.java
+/home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/UserDetailsServiceImpl.java
 /home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/config/WebSecurityConfig.java
 /home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/JatterApplication.java
 /home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/PagesController.java
 /home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/Users.java
+/home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/UserService.java
+/home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/user/UserInterface.java
 /home/ohmu/Workspace/github/100days/jatter/src/main/java/com/alexertech/jatter/jeet/Jeet.java

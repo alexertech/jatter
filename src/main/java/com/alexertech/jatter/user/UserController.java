@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping
-public class UsersController{
+public class UserController{
 
 	@Autowired
-	private UsersRepository service;
+	private UserRepository service;
 	
 	// Set up the Bcrypt encoder to handle the passwords
 	@Autowired

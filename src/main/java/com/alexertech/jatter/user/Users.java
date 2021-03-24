@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import com.alexertech.jatter.jeet.Jeet;
 
+
 /*
  * The Users Class models the Users. This class works very closely with SpringSecurity and uses
  * a Plural name because the security framework has a class called User  
@@ -26,7 +27,7 @@ import com.alexertech.jatter.jeet.Jeet;
 @Table(name = "users")
 public class Users {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int userId;	
 	@Column(unique=true)
 	private String username;
@@ -69,6 +70,5 @@ public class Users {
 		this.jeets = jeets;
 	}
 
-	
 
 }
