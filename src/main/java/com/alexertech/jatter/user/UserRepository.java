@@ -1,5 +1,8 @@
 package com.alexertech.jatter.user;
 
+
+import com.alexertech.jatter.user.Users;
+
 import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -10,7 +13,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * to CRUD or JPA depending of which database is used.
  * */
 
-public interface UsersRepository extends MongoRepository<Users, String> {
+public interface UserRepository extends MongoRepository<Users, String> {
 
 	// Required for SpringSecurity, we need to find a users with Username
 	Optional<Users> findByUsername(String username);

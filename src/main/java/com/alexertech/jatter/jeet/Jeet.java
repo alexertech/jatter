@@ -1,16 +1,10 @@
 package com.alexertech.jatter.jeet;
 
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /*
  * The Jeet Class models the Jeets, which would be the equivalent to Tweets.
@@ -18,18 +12,13 @@ import javax.persistence.Table;
  * Note that this class also handles the setup up of the database tables.
  * */
 
-@Entity
-@Table(name = "jeets")
+@Document(collection = "jeet")
 public class Jeet {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int jeetId;	
+	@Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
+	  
 	private String message;
-
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "users", joinColumns = @JoinColumn(name = "jeetId"), 
-	inverseJoinColumns = @JoinColumn(name = "userId"))
-	List<Jeet> jeets;
 
 	public int getJeetId() {
 		return jeetId;
@@ -46,15 +35,5 @@ public class Jeet {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
-	public List<Jeet> getJeets() {
-		return jeets;
-	}
-
-	public void setJeets(List<Jeet> jeets) {
-		this.jeets = jeets;
-	}
-
-
 
 }
