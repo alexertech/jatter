@@ -1,5 +1,8 @@
 package com.alexertech.jatter.user;
 
+
+import com.alexertech.jatter.user.Users;
+
 import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
