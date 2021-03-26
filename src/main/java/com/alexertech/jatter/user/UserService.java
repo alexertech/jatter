@@ -17,14 +17,4 @@ public class UserService implements UserInterface {
 		return (List<Users>)data.findAll();
 	}
 
-	@Override
-	public Optional<Users> GetId(int id) {
-		return null;
-	}
-
-	@Override
-	public Optional<Users> GetByUsername(String username) {
-		return data.findByUsername(username);
-	}
-
 }

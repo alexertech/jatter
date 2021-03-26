@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface UserRepository extends MongoRepository<Users, String> {
 
-	// Required for SpringSecurity, we need to find a users with Username
+	// Required for SpringSecurity, we need to find a users by Username
 	Optional<Users> findByUsername(String username);
 
 }

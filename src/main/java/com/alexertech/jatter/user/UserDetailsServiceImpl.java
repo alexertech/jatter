@@ -24,28 +24,28 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 	
+    // Locates the user based on the username. We override this in the function in the Spring Security 
+    // UserDetailsService class.
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
         Optional<Users> optionalUser = usersRepository.findByUsername(userName);
         
+        // If the user is present we copy the data to an object.
         if(optionalUser.isPresent()) {
         	Users users = optionalUser.get();
-        	
-        	/*
-            return User.builder()
-            	.username(users.getUsername())
-            	.password(users.getPassword())
-            	.build();
-            */
-            
-
+        	           
+        	// Stores a String representation of an authority granted to the Authentication object.
+        	// Here we can implement roles, however to keep it simple will use a single role called "user"
 			List<SimpleGrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority("user"));
+			
+			// Returns the user details and grants the access
             return new org.springframework.security.core.userdetails
             		.User(users.getUsername(), users.getPassword(), authorities);
             
+            // TODO: Research the section of the class where the password is being compared
+            
         } else {
-        	System.out.println("User Name is not Found");
         	throw new UsernameNotFoundException("User Name is not Found");
         }   
     }
