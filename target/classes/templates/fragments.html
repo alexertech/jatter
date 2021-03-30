@@ -1,14 +1,26 @@
-<div th:fragment="session_buttons">
-	<div style="float:left">
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+	<div th:fragment="session_buttons">
 		<!--  options 
 		<a class="btn btn-primary">Option 1</a>
 		<a class="btn btn-primary">Option 2</a>
 		 -->
-		<a th:href="@{/}" class="btn btn-primary">Index</a>
-		<a th:href="@{/login}" class="btn btn-primary">Login</a>
-		<a th:href="@{/user/list}" class="btn btn-primary">Users</a>
+		
+		<div sec:authorize="isAuthenticated()">
+			<a th:href="@{/}" class="btn btn-primary">Index</a>
+			<!-- <a th:href="@{/user/list}" class="btn btn-primary">Users</a> -->
+		</div>
+		
+		<div sec:authorize="isAnonymous()">
+			<a th:href="@{/}" class="btn btn-primary">Index</a>
+			<a th:href="@{/login}" class="btn btn-primary">Login</a>
+			<a th:href="@{/register}" class="btn btn-primary">Register</a>
+		</div>
+	 			
 	</div>
-</div>
-<div style="clear:both"></div>
-
+	</body>
+</html>
     

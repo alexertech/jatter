@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       th:replace="layout :: layout(~{::title}, ~{::section})">
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-    <section>
-		<div class="container mt-4">
-			
+	<head>
+	    <title></title>
+	</head>
+	<body>
+	    <section>
+			<div class="container mt-4">
+				
 				<div th:include="fragments.html :: session_buttons"></div>
-
-			<h1>Index</h1>
-
-		</div>
-    </section>
-
-</body>
+				<br>
+	
+				<h1>Jatter</h1>
+				<div>
+				Welcome! This is a sample application for a Twitter Clone. Register and start sending your "Jeets".
+				</div>
+				<br>
+				
+				<h3>Latest Jeets</h3>
+	
+				<div> - Lorem ipsum</div>
+				<div> - Lorem ipsum</div>
+				<div> - Lorem ipsum</div>
+				
+			</div>
+	    </section>
+	
+	</body>
 </html>

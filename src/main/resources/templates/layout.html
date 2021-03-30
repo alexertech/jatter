@@ -2,7 +2,7 @@
 	<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)">
 	<head>
     	<meta charset="UTF-8">
-    	<title th:replace="${title}">Layout Title</title>
+    	<title th:text="@{title}">Layout Title</title>
 		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 	</head>
 	<body>

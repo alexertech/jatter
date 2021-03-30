@@ -16,6 +16,7 @@ public class PagesController {
 
 	@GetMapping("/")
 	public String index(Model model) {
+		model.addAttribute("title", "Main :: Jatter");
 		return "index";
 	}
 
