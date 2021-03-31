@@ -42,7 +42,7 @@ public class UserController{
 		// "model" is our way to send information to the view using thymeleaf.
 		// In this case we are setting a new User object.
 		model.addAttribute("usersForm", new Users());
-		model.addAttribute("title", "Register :: Jatter");
+		model.addAttribute("pageTitle", "Register :: Jatter");
 		// Return the user_form view
 		return "user_form"; 
 	}
