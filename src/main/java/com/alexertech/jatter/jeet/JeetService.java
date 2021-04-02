@@ -18,11 +18,6 @@ public class JeetService implements JeetInterface {
 	}
 
 	@Override
-	public Optional<Jeet> GetId(int id) {
-		return data.findById(id);
-	}
-
-	@Override
 	public int Save(Jeet i) {
 		int res=0;
 		Jeet issue = data.save(i);
@@ -34,8 +29,16 @@ public class JeetService implements JeetInterface {
 	}
 
 	@Override
-	public void Delete(int id) {
-		data.deleteById(id);
+	public Optional<Jeet> GetId(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	@Override
+	public void Delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

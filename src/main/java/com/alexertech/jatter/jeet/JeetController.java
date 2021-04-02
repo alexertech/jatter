@@ -18,43 +18,43 @@ public class JeetController {
 	@Autowired
 	private JeetInterface service;
 	
-	@GetMapping("/")
+	@GetMapping("/jeet")
 	public String index(Model model) {
 		List<Jeet> issues = service.GetAll();
 		model.addAttribute("issuesList", issues);
-		return "index";
+		return "jeet_index";
 	}
 	
-	@GetMapping("/issue/list")
+	@GetMapping("/jeet/list")
 	public String list(Model model) {
 		List<Jeet> issues = service.GetAll();
 		model.addAttribute("issuesList", issues);
-		return "issue_index";
+		return "jeet_index";
 	}
 	
-	@GetMapping("/issue/add")
+	@GetMapping("/jeet/add")
 	public String add(Model model) {
 
 		model.addAttribute("issuesForm", new Jeet());
-		return "issue_form"; 
+		return "jeet_form"; 
 	}
-	@PostMapping("/issue/save")
+	@PostMapping("/jeet/save")
 	public String save(Jeet i, Model model) {
 		service.Save(i);
 		return "redirect:/issue/list";
 	}
 	
-	@GetMapping("/issue/edit/{id}")
+	@GetMapping("/jeet/edit/{id}")
 	public String edit(@PathVariable int id, Model model) {
 		Optional<Jeet> issue = service.GetId(id); 
 		model.addAttribute("issuesForm",issue);
-		return "issue_form";
+		return "jeet_form";
 	}
 	
-	@GetMapping("/issue/delete/{id}")
+	@GetMapping("/jeet/delete/{id}")
 	public String delete(@PathVariable int id, Model model) {
 		service.Delete(id);
-		return "redirect:/issue/list";
+		return "redirect:/jeet/list";
 	}
 
 }
