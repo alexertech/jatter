@@ -11,29 +11,20 @@
 			
 			<div th:include="fragments.html :: session_buttons"></div>
 			<div style="clear:both;height:5px;"></div>
-			<a th:href="@{/issue/list}" class="btn btn-primary">Back to Issues</a>
+			<a th:href="@{/jeet/list}" class="btn btn-primary">Back to Issues</a>
 			
 			<br><br>
 			
 			<div class="col-sm-6">
-				<form th:action="@{/issue/save}" th:object=${issuesForm} method="POST">
+				<form th:action="@{/jeet/save}" th:object=${jeetForm} method="POST">
 					<div class="card">
 						<div class="card-header">
-							<h3>Issues Module</h3>
+							<h3>Jeet Module</h3>
 						</div>
 						<div class="card-body">
 							<div class="form-group">
 								<label>Message</label>
 								<input th:field="*{message}" type="text" class="form-control"/>
-							</div>
-							<div class="form-group">
-								<label>Priority</label>
-								<select th:field="*{priority}" class="form-control">
-									<option value="Normal">Normal</option>
-									<option value="High">High</option>
-									<option value="Urgent">Urgent</option>
-									<option value="Unbreak">Unbreak Now!</option>
-								</select>
 							</div>
 						</div>
 						<div class="card-footer">

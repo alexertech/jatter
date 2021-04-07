@@ -21,33 +21,33 @@ public class JeetController {
 	@GetMapping("/jeet")
 	public String index(Model model) {
 		List<Jeet> issues = service.GetAll();
-		model.addAttribute("issuesList", issues);
+		model.addAttribute("jeetList", issues);
 		return "jeet_index";
 	}
 	
 	@GetMapping("/jeet/list")
 	public String list(Model model) {
 		List<Jeet> issues = service.GetAll();
-		model.addAttribute("issuesList", issues);
+		model.addAttribute("jeetList", issues);
 		return "jeet_index";
 	}
 	
 	@GetMapping("/jeet/add")
 	public String add(Model model) {
 
-		model.addAttribute("issuesForm", new Jeet());
+		model.addAttribute("jeetForm", new Jeet());
 		return "jeet_form"; 
 	}
 	@PostMapping("/jeet/save")
 	public String save(Jeet i, Model model) {
 		service.Save(i);
-		return "redirect:/issue/list";
+		return "redirect:/jeet/list";
 	}
 	
 	@GetMapping("/jeet/edit/{id}")
 	public String edit(@PathVariable int id, Model model) {
 		Optional<Jeet> issue = service.GetId(id); 
-		model.addAttribute("issuesForm",issue);
+		model.addAttribute("jeetForm",issue);
 		return "jeet_form";
 	}
 	
