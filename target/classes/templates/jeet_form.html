@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout :: layout(~{::title}, ~{::section})">
+<head>
+    <title>Issue Tracker</title>
+</head>
+<body>
+
+    <section>
+		<div class="container mt-4">
+			
+			<div th:include="fragments.html :: session_buttons"></div>
+			<div style="clear:both;height:5px;"></div>
+			<a th:href="@{/jeet/list}" class="btn btn-primary">Back to Issues</a>
+			
+			<br><br>
+			
+			<div class="col-sm-6">
+				<form th:action="@{/jeet/save}" th:object=${jeetForm} method="POST">
+					<div class="card">
+						<div class="card-header">
+							<h3>Jeet Module</h3>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label>Message</label>
+								<input th:field="*{message}" type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="card-footer">
+							<input type="submit" value="Save" class="btn btn-success">
+						</div>
+					
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

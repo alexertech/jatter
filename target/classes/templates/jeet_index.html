@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout :: layout(~{::title}, ~{::section})">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <section>
+		<div class="container mt-4">
+			
+			<div th:include="fragments.html :: session_buttons"></div>
+			<div style="clear:both;height:5px;"></div>
+			<a th:href="@{/jeet/add}" class="btn btn-primary">New Issue</a>
+			<br><br>
+			<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Message</th>
+					<th>Priority</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="jeet:${jeetList}">
+					<td th:text="${jeet.jeetId}"></td>
+					<td th:text="${jeet.message}"></td>
+					<td>
+						<a th:href="@{/jeet/edit/}+${jeet.jeetId}" class="btn btn-warning">Edit</a>
+						<a th:onclick="confirmDelete('/jeet',[[${jeet.jeetId}]])" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</section>
+
+</body>
+</html>
