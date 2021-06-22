@@ -1,2 +1,3 @@
-# jatter
-Twitter clone for 100days of code challenge by alexertech
+# Jatter
+
+Work in progress. 
